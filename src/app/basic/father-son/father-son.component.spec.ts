@@ -80,9 +80,6 @@ describe('FatherSonComponent', () => {
     component.onChange(10);
     expect(component.onClientUpdated.emit).toHaveBeenCalledWith({id: 10, name: 'Juan'});
   })
-
-
-
 });
 
 
