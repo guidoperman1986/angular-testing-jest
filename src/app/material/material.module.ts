@@ -4,7 +4,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button'
 
 
 @NgModule({
@@ -17,12 +18,16 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class MaterialModule { }

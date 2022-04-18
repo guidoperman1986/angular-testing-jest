@@ -1,1 +1,31 @@
-<p>todos-list works!</p>
+<h1>Todo List</h1>
+
+<table
+  mat-table
+  [dataSource]="todosMethod"
+  *ngIf="todosMethod.length > 0"
+  class="mat-elevation-z8"
+  style="margin-top: 30px"
+>
+  <ng-container matColumnDef="todo">
+    <th mat-header-cell *matHeaderCellDef>Task</th>
+    <td mat-cel *matCellDef="let row">{{ row.todo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Edit</th>
+    <td mat-cel *matCellDef="let element" (click)="editTodo(element.id)">
+        <mat-icon>edit</mat-icon>      
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef>Delete</th>
+    <td mat-cel *matCellDef="let element" (click)="deleteTodo(element.id)">
+        <mat-icon>restore_from_trash</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

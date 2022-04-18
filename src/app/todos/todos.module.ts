@@ -5,6 +5,7 @@ import { MaterialModule } from '../material/material.module';
 import { TodosRoutingModule } from './todos-routing.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
 import { TodosAddComponent } from './todos-add/todos-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TodosAddComponent } from './todos-add/todos-add.component';
   imports: [
     CommonModule,
     MaterialModule,
-    TodosRoutingModule
+    TodosRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TodosModule { }

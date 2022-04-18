@@ -1,1 +1,24 @@
-<p>todos-add works!</p>
+<h1>Add Todo...</h1>
+
+<div class="input-container">
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      autocomplete="off"
+      placeholder="Task..."
+      [formControl]="task"
+      (keyup.enter)="addTodo()"
+    />
+    <button *ngIf="task.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <mat-error *ngIf="task.hasError('required')"
+      >This field is required</mat-error
+    >
+    <mat-error *ngIf="task.hasError('minlength')"
+      >This field needs 6 characters minimum</mat-error
+    >
+  </mat-form-field>
+</div>

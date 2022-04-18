@@ -1,0 +1,8 @@
+.mat-column-todo {
+    width: 150px;
+    text-align: center;
+}
+.mat-column-edit,
+.mat-column-delete {
+    width: 50px;
+}
