@@ -1,0 +1,13 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-column-email-column {
+    width: 200px;
+}
+
+.mat-column-firstName-column, 
+.mat-column-lastName-column {
+    width: 150px;
+}

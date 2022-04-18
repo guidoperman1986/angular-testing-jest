@@ -1,1 +1,119 @@
-<input type="text" #search>
+<div style="padding: 25px">
+  <h1>Common Search</h1>
+
+  <div style="text-align: center">
+    <div>
+      <input type="text" #search placeholder="Page number..." />
+    </div>
+
+    <div>
+      <select
+        name=""
+        id=""
+        *ngIf="results"
+        (change)="selectUser(user.value)"
+        #user
+      >
+        <option value="">Seleccionar</option>
+        <option [value]="res.id" *ngFor="let res of results.data">
+          {{ res.first_name }} {{ res.last_name }}
+        </option>
+      </select>
+    </div>
+
+    <div *ngIf="userData">
+      <div>{{ userData?.first_name }} {{ userData?.last_name }}</div>
+      <div>{{ userData?.email }}</div>
+      <img [src]="userData?.avatar" alt="" />
+    </div>
+  </div>
+
+  <hr />
+
+  <h1>Mat-Autocomplete</h1>
+
+  <div style="display: grid; place-items: center">
+    <mat-form-field appearance="fill">
+      <input
+        type="text"
+        placeholder="Pick one example..."
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+        name="search"
+      />
+
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let ex of filteredExamples | async" [value]="ex">
+          {{ ex }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+  <hr />
+
+  <h1>Mat-Autocomplete recibiendo resultados de una API</h1>
+
+  <div style="display: grid; place-items: center">
+    <mat-form-field appearance="fill">
+      <input
+        type="text"
+        placeholder="Select Page..."
+        aria-label="Number"
+        matInput
+        [formControl]="reqResFormControl"
+        [matAutocomplete]="autoReqRes"
+        name="reqResSearch"
+      />
+
+      <mat-autocomplete
+        #autoReqRes="matAutocomplete"
+        [displayWith]="reqResDisplayFn"
+      >
+        <mat-option
+          *ngFor="let filtered of reqResFiltered | async"
+          [value]="filtered.value"
+          (click)="onSelectPage(filtered.key)"
+        >
+          {{ filtered.value }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <table 
+        mat-table [dataSource]="dataPerPage.data" 
+        *ngIf="dataPerPage"
+        class="mat-elevation-z8"
+    >
+
+        <ng-container matColumnDef="email-column">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cel *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName-column">
+            <th mat-header-cell *matHeaderCellDef> First Name </th>
+            <td mat-cel *matCellDef="let element"> {{element.first_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName-column">
+            <th mat-header-cell *matHeaderCellDef> Last Name </th>
+            <td mat-cel *matCellDef="let element"> {{element.last_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="avatar-column">
+            <th mat-header-cell *matHeaderCellDef> Avatar </th>
+            <td mat-cel *matCellDef="let element"> <img [src]="element.avatar" alt=""> </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+
+    
+
+  </div>
+</div>
