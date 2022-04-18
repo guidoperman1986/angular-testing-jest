@@ -1,23 +1,19 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http'
 import { BasicModule } from './basic/basic.module';
 import { SearchComponent } from './intermediate/search/search.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table';
+import { MaterialModule } from './material/material.module';
+import { TodosModule } from './todos/todos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,11 +22,9 @@ import { MatTableModule } from '@angular/material/table';
     BasicModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatTableModule
+    TodosModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

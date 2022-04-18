@@ -28,6 +28,10 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
+    path: 'todos',
+    loadChildren: () => import( './todos/todos.module' ).then( m => m.TodosModule )
+  },
+  {
     path: '**',
     redirectTo: 'basic/counter',
   }
