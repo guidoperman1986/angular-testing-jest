@@ -1,0 +1,13 @@
+<div>
+    <mat-form-field style="width: 100%;">
+      <mat-label>Gender</mat-label>
+      <input
+        #genderInput
+        (keyup)="setGender(genderInput.value)"
+        type="text"
+        matInput
+        name="gender"    
+      />
+    </mat-form-field>
+
+</div>

@@ -4,6 +4,7 @@ import { CharizardComponent } from './basic/charizard/charizard.component';
 import { CounterRouteComponent } from './basic/counter-route/counter-route.component';
 import { CounterComponent } from './basic/counter/counter.component';
 import { FatherComponent } from './basic/father/father.component';
+import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
 import { SearchComponent } from './intermediate/search/search.component';
 
 const routes: Routes = [
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'todos',
     loadChildren: () => import( './todos/todos.module' ).then( m => m.TodosModule )
+  },
+  {
+    path: 'controlvalueaccessor',
+    component: ControlValueAccessorComponent
   },
   {
     path: '**',

@@ -1,0 +1,31 @@
+<div style="width: 25%">
+  <form [formGroup]="miForm" style="display: flex; flex-direction: column">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Surname</mat-label>
+      <input type="text" matInput formControlName="surname" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input type="text" matInput formControlName="age" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="text" matInput formControlName="email" />
+    </mat-form-field>
+
+    <app-gender formControlName="gender"></app-gender>
+
+    <mat-error *ngIf="getFormErrors('gender')?.['genderNotValid']"
+      >Gender should be 'Masculino' or 'Femenino'</mat-error
+    >
+  </form>
+
+  {{ miForm.controls["gender"].errors | json }}
+</div>
