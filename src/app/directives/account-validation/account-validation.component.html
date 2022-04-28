@@ -1,0 +1,26 @@
+<form [formGroup]="bankInformationForm">
+  <fieldset>
+    <div class="input__field--row">
+      <label>Bank</label>
+      <span class="input__wrapper">
+        <select name="bankCode" id="bankCode" formControlName="bankCode">
+          <option [disabled]="true" value="">Choose Bank</option>
+          <option value="038">GTBank</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="input__field--row">
+      <label>Account Number</label>
+      <span class="input__wrapper">
+        <input
+          type="text"
+          name="bankAccountNumber"
+          id="bankAccountNumber"
+          formControlName="bankAccountNumber"
+          [appAccountLookup]="bankInformationForm.value"
+        />
+      </span>
+    </div>
+  </fieldset>
+</form>

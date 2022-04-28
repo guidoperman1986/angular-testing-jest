@@ -11,13 +11,19 @@ import { MaterialModule } from './material/material.module';
 import { TodosModule } from './todos/todos.module';
 import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
 import { GenderComponent } from './form/gender/gender.component';
+import { ExampleDirectiveComponent } from './directives/example-directive/example-directive.component';
+import { NgLoopDirective } from './directives/ng-loop.directive';
+import { AtributeDirective } from './directives/attribute.directive';
+import { MyCustomIfDirective } from './directives/my-custom-if.directive';
+import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
+import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ControlValueAccessorComponent,
-    GenderComponent,
+    GenderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,8 @@ import { GenderComponent } from './form/gender/gender.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     TodosModule,
-    MaterialModule
+    MaterialModule,
+    DirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

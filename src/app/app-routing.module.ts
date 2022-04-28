@@ -4,6 +4,8 @@ import { CharizardComponent } from './basic/charizard/charizard.component';
 import { CounterRouteComponent } from './basic/counter-route/counter-route.component';
 import { CounterComponent } from './basic/counter/counter.component';
 import { FatherComponent } from './basic/father/father.component';
+import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
+import { ExampleDirectiveComponent } from './directives/example-directive/example-directive.component';
 import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
 import { SearchComponent } from './intermediate/search/search.component';
 
@@ -35,6 +37,14 @@ const routes: Routes = [
   {
     path: 'controlvalueaccessor',
     component: ControlValueAccessorComponent
+  },
+  {
+    path: 'directive-example',
+    component: ExampleDirectiveComponent
+  },
+  {
+    path: 'account-validation',
+    component: AccountValidationComponent
   },
   {
     path: '**',

@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.inside__input--button {
+  position: absolute;
+  font-size: 10px;
+  right: 13px;
+  top: 30%;
+  cursor: pointer;
+  user-select: none;
+}
+.result__under--text {
+  position: absolute;
+  font-size: 12px;
+  left: 0px;
+  bottom: -50%;
+  cursor: pointer;
+  user-select: none;
+}
