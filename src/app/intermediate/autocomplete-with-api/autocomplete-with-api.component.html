@@ -1,0 +1,60 @@
+<mat-form-field>
+  <input
+    type="text"
+    [(ngModel)]="selectedMovie"
+    [formControl]="searchMovieCtrl"
+    placeholder="Min 3 Characters Ex. Ant"
+    matInput
+    [matAutocomplete]="auto"
+    name="searchInput"
+  />
+  <button
+    *ngIf="selectedMovie"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="clearSelection()"
+  ></button>
+
+  <mat-autocomplete
+    [panelWidth]="300"
+    #auto="matAutocomplete"
+    (optionSelected)="onSelected()"
+    [displayWith]="displayWith"
+  >
+    <mat-option *ngIf="searchMovieCtrl?.value?.length > 0 && isLoading"
+      >Loading...</mat-option
+    >
+    <mat-option *ngIf="noResults">No results found</mat-option>
+    <ng-container *ngIf="!isLoading">
+      <mat-option *ngFor="let movie of filteredMovies" [value]="movie">
+        <span
+          ><b>{{ movie.title }}</b>
+          {{ movie.release_date | date: "mediumDate" }}</span
+        >
+      </mat-option>
+    </ng-container>
+  </mat-autocomplete>
+</mat-form-field>
+
+<br />
+<ng-container *ngIf="errorMsg; else elseTemplate">
+  {{ errorMsg }}
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="movie-details" *ngIf="selectedMovie?.title">
+    <div>
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + selectedMovie?.backdrop_path"
+        style="height: 250px"
+        [alt]="selectedMovie?.title"
+      />
+    </div>
+    <div>
+      <h3>{{ selectedMovie?.title }}</h3>
+      <ul>
+        <li>Year: {{ selectedMovie?.release_date | date: "mediumDate" }}</li>
+      </ul>
+    </div>
+  </div>
+</ng-template>

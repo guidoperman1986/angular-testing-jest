@@ -1,4 +1,15 @@
+<mat-sidenav-container style="height: 100vh">
+  <mat-sidenav class="side-menu" opened mode="side" position="start">
+    <div
+      *ngFor="let link of links"
+      class="side-menu-item"
+      [routerLink]="link.url"
+    >
+      {{ link.name }}
+    </div>
+  </mat-sidenav>
 
-<div class="container">
+  <div class="container">
     <router-outlet></router-outlet>
-</div>
+  </div>
+</mat-sidenav-container>

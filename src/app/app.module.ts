@@ -17,13 +17,15 @@ import { AtributeDirective } from './directives/attribute.directive';
 import { MyCustomIfDirective } from './directives/my-custom-if.directive';
 import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
 import { DirectivesModule } from './directives/directives.module';
+import { AutocompleteWithApiComponent } from './intermediate/autocomplete-with-api/autocomplete-with-api.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ControlValueAccessorComponent,
-    GenderComponent
+    GenderComponent,
+    AutocompleteWithApiComponent
   ],
   imports: [
     BrowserModule,
