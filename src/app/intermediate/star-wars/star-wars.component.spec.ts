@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TodosAddComponent } from '../todos-add/todos-add.component';
 
-import { TodosComponent } from './todos.component';
+import { StarWarsComponent } from './star-wars.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('StarWarsComponent', () => {
+  let component: StarWarsComponent;
+  let fixture: ComponentFixture<StarWarsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodosComponent, TodosAddComponent ]
+      declarations: [ StarWarsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(StarWarsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

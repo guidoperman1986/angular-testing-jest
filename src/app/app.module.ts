@@ -18,6 +18,7 @@ import { MyCustomIfDirective } from './directives/my-custom-if.directive';
 import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
 import { DirectivesModule } from './directives/directives.module';
 import { AutocompleteWithApiComponent } from './intermediate/autocomplete-with-api/autocomplete-with-api.component';
+import { StarWarsComponent } from './intermediate/star-wars/star-wars.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AutocompleteWithApiComponent } from './intermediate/autocomplete-with-a
     SearchComponent,
     ControlValueAccessorComponent,
     GenderComponent,
-    AutocompleteWithApiComponent
+    AutocompleteWithApiComponent,
+    StarWarsComponent
   ],
   imports: [
     BrowserModule,

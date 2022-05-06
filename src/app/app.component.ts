@@ -46,6 +46,10 @@ export class AppComponent {
       name: 'Directives',
       url: 'directive-example'
     },
+    {
+      name: 'Star Wars',
+      url: 'star-wars'
+    },
 
   ]
 }

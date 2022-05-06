@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MyCustomIfDirective } from '../my-custom-if.directive';
+import { NgLoopDirective } from '../ng-loop.directive';
 
 import { ExampleDirectiveComponent } from './example-directive.component';
 
@@ -8,7 +10,7 @@ describe('ExampleDirectiveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExampleDirectiveComponent ]
+      declarations: [ ExampleDirectiveComponent, NgLoopDirective, MyCustomIfDirective ]
     })
     .compileComponents();
   });

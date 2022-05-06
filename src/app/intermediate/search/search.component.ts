@@ -18,7 +18,7 @@ import {
   tap,
 } from 'rxjs';
 import { Reqres, ReqresData, ReqResInput } from 'src/app/models/reqres';
-import { ReqresService } from 'src/app/services/reqres.service';
+import { ReqresService } from '../../services/reqres.service';
 
 @Component({
   selector: 'app-search',

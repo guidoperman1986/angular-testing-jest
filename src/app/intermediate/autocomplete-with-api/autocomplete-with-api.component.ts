@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, finalize, switchMap, tap } from 'rxjs';
 import { Result } from 'src/app/models/movie';
-import { UtilityService } from 'src/app/services/utility.service';
+import { UtilityService } from '../../services/utility.service';
 
 @Component({
   selector: 'app-autocomplete-with-api',

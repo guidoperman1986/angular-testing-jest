@@ -8,6 +8,7 @@ import { AccountValidationComponent } from './directives/account-validation/acco
 import { ExampleDirectiveComponent } from './directives/example-directive/example-directive.component';
 import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
 import { SearchComponent } from './intermediate/search/search.component';
+import { StarWarsComponent } from './intermediate/star-wars/star-wars.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'account-validation',
     component: AccountValidationComponent
+  },
+  {
+    path: 'star-wars',
+    component: StarWarsComponent
   },
   {
     path: '**',

@@ -1,0 +1,52 @@
+<div class="container">
+  <div style="width: 100%">
+    <h1 class="title">Star Wars Api</h1>
+  </div>
+
+  <div class="buttons">
+    <button
+      *ngFor="let option of searchOptions"
+      mat-raised-button
+      [ngClass]="{
+        selectedOption: selectedOption === option,
+        option: selectedOption !== option
+      }"
+      (click)="onSelectOption = option"
+    >
+      {{ option | titlecase }}
+    </button>
+  </div>
+
+  <div class="search">
+    <mat-form-field appearance="outline">
+      <mat-label>{{searchMessage}}</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="off"
+        [placeholder]="searchMessage"
+        [formControl]="search"
+      />
+      <span matSuffix *ngIf="isLoading | async" class="spinner-container"
+        ><mat-spinner diameter="24"></mat-spinner
+      ></span>
+      <mat-error *ngIf="search.hasError('required') && search.touched">
+        <div>Required</div>
+      </mat-error>
+
+      <mat-error *ngIf="search.hasError('minlength') && search.touched">
+        <div>Minimo 4 caracteres</div>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div *ngIf="result.length > 0; else noResults" style="background-color: white;">
+    {{ result | json }}
+  </div>
+
+  <ng-template #noResults>
+    <div *ngIf="searched" style="background-color: white;">
+      No hay resultados
+    </div>
+  </ng-template>
+  
+</div>
