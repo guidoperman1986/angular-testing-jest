@@ -50,6 +50,10 @@ export class AppComponent {
       name: 'Star Wars',
       url: 'star-wars'
     },
+    {
+      name: 'Clarity',
+      url: 'clarity'
+    },
 
   ]
 }

@@ -6,19 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BasicModule } from './basic/basic.module';
-import { SearchComponent } from './intermediate/search/search.component';
-import { MaterialModule } from './material/material.module';
-import { TodosModule } from './todos/todos.module';
+import { ClarityComponent } from './clarity/clarity.component';
+import { DirectivesModule } from './directives/directives.module';
 import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
 import { GenderComponent } from './form/gender/gender.component';
-import { ExampleDirectiveComponent } from './directives/example-directive/example-directive.component';
-import { NgLoopDirective } from './directives/ng-loop.directive';
-import { AtributeDirective } from './directives/attribute.directive';
-import { MyCustomIfDirective } from './directives/my-custom-if.directive';
-import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
-import { DirectivesModule } from './directives/directives.module';
 import { AutocompleteWithApiComponent } from './intermediate/autocomplete-with-api/autocomplete-with-api.component';
+import { SearchComponent } from './intermediate/search/search.component';
 import { StarWarsComponent } from './intermediate/star-wars/star-wars.component';
+import { MaterialModule } from './material/material.module';
+import { TodosModule } from './todos/todos.module';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
@@ -27,7 +24,8 @@ import { StarWarsComponent } from './intermediate/star-wars/star-wars.component'
     ControlValueAccessorComponent,
     GenderComponent,
     AutocompleteWithApiComponent,
-    StarWarsComponent
+    StarWarsComponent,
+    /* ClarityComponent */
   ],
   imports: [
     BrowserModule,
@@ -39,9 +37,10 @@ import { StarWarsComponent } from './intermediate/star-wars/star-wars.component'
     ReactiveFormsModule,
     TodosModule,
     MaterialModule,
-    DirectivesModule
+    DirectivesModule,
+    /* ClarityModule */
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
