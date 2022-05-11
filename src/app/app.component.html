@@ -1,7 +1,24 @@
-<mat-toolbar>Angular Popurri</mat-toolbar>
+<mat-toolbar>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+
+  Angular Popurri
+</mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav class="side-menu" opened mode="side" position="start">
+  <mat-sidenav
+    class="side-menu"
+    #sidenav="matSidenav"
+    opened
+    mode="side"
+    position="start"
+  >
     <img
       class="avatar mat-elevation-z8"
       src="https://avatars.githubusercontent.com/u/38866056?v=4"

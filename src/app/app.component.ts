@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 interface Link {
   name: string;
@@ -10,8 +18,32 @@ interface Link {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'angular-testing';
+
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
+
+  constructor(
+    private observer: BreakpointObserver,
+    private cd: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
+      if (res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav?.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
+      }
+    });
+
+    this.cd.detectChanges();
+  }
 
   links: Link[] = [
     {
