@@ -62,5 +62,9 @@ export class AppComponent {
       name: 'content-child',
       url: 'ng-content/content-child',
     },
+    {
+      name: 'weather-rxjs',
+      url: 'weather',
+    },
   ];
 }

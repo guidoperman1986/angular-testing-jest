@@ -9,6 +9,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [],
@@ -23,6 +27,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSidenavModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatCardModule,
+    MatDividerModule,
   ],
   exports: [
     MatAutocompleteModule,
@@ -34,6 +42,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSidenavModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatCardModule,
+    MatDividerModule,
   ],
 })
 export class MaterialModule {}

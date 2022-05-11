@@ -21,6 +21,7 @@ import { ImageComponent } from './advanced/image/image.component';
 import { CardComponent } from './advanced/card/card.component';
 import { CardListComponent } from './advanced/card-list/card-list.component';
 import { CardWrapperComponent } from './advanced/card-wrapper/card-wrapper.component';
+import { WeatherComponent } from './intermediate/weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CardWrapperComponent } from './advanced/card-wrapper/card-wrapper.compo
     CardComponent,
     CardListComponent,
     CardWrapperComponent,
+    WeatherComponent,
     /* ClarityComponent */
   ],
   imports: [

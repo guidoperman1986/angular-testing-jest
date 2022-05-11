@@ -54,7 +54,9 @@
 
   <hr />
 
-  <h1>Mat-Autocomplete recibiendo resultados de una API</h1>
+  <h1 style="text-align: center">
+    Mat-Autocomplete recibiendo resultados de una API
+  </h1>
 
   <div style="display: grid; place-items: center">
     <mat-form-field appearance="fill">
@@ -82,44 +84,44 @@
       </mat-autocomplete>
     </mat-form-field>
 
-    <table 
-        mat-table [dataSource]="dataPerPage.data" 
-        *ngIf="dataPerPage"
-        class="mat-elevation-z8"
+    <table
+      mat-table
+      [dataSource]="dataPerPage.data"
+      *ngIf="dataPerPage"
+      class="mat-elevation-z8"
     >
+      <ng-container matColumnDef="email-column">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cel *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
 
-        <ng-container matColumnDef="email-column">
-            <th mat-header-cell *matHeaderCellDef> Email </th>
-            <td mat-cel *matCellDef="let element"> {{element.email}} </td>
-        </ng-container>
+      <ng-container matColumnDef="firstName-column">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cel *matCellDef="let element">{{ element.first_name }}</td>
+      </ng-container>
 
-        <ng-container matColumnDef="firstName-column">
-            <th mat-header-cell *matHeaderCellDef> First Name </th>
-            <td mat-cel *matCellDef="let element"> {{element.first_name}} </td>
-        </ng-container>
+      <ng-container matColumnDef="lastName-column">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cel *matCellDef="let element">{{ element.last_name }}</td>
+      </ng-container>
 
-        <ng-container matColumnDef="lastName-column">
-            <th mat-header-cell *matHeaderCellDef> Last Name </th>
-            <td mat-cel *matCellDef="let element"> {{element.last_name}} </td>
-        </ng-container>
+      <ng-container matColumnDef="avatar-column">
+        <th mat-header-cell *matHeaderCellDef>Avatar</th>
+        <td mat-cel *matCellDef="let element">
+          <img [src]="element.avatar" alt="" />
+        </td>
+      </ng-container>
 
-        <ng-container matColumnDef="avatar-column">
-            <th mat-header-cell *matHeaderCellDef> Avatar </th>
-            <td mat-cel *matCellDef="let element"> <img [src]="element.avatar" alt=""> </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-
-    
-
   </div>
 
   <hr />
 
   <h1>IMDB - Movie Search</h1>
 
-  <app-autocomplete-with-api style="display: grid; place-items: center;"></app-autocomplete-with-api>
+  <app-autocomplete-with-api
+    style="display: grid; place-items: center"
+  ></app-autocomplete-with-api>
 </div>

@@ -23,8 +23,7 @@ export class UtilityService {
     };
   }
 
-  searchMovie(movie: string): Observable<Result[]> {   
-
+  searchMovie(movie: string): Observable<Result[]> {
     const params = {
       ...this.params,
       page: '1',
@@ -35,5 +34,10 @@ export class UtilityService {
     return this.httpClient
       .get<Movies>(`${this.baseUrl}/search/movie`, { params })
       .pipe(map((movies) => movies.results));
+  }
+
+  getWeatherForCity(city: string): Observable<any> {
+    const path = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=695ed9f29c4599b7544d0db5c211d499`;
+    return this.httpClient.get(path);
   }
 }
