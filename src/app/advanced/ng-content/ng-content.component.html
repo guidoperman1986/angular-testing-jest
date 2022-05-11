@@ -1,0 +1,32 @@
+<h1>Content projection - ng-content</h1>
+<hr />
+
+<app-image prop1="mundo">
+  <div primero>First content con injection slot</div>
+
+  <img style="margin-top: 30px" src="https://picsum.photos/200/300" alt="" />
+
+  <div botones style="margin-top: 30px">
+    <button mat-button>Basic</button>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button color="warn">Warn</button>
+    <button mat-button disabled>Disabled</button>
+  </div>
+
+  <div
+    botones
+    style="
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      width: 500px;
+    "
+  >
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+  </div>
+</app-image>

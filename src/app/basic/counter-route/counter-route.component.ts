@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject, Subject, takeUntil, takeWhile, timer } from 'rxjs';
+import { BehaviorSubject, takeWhile, timer } from 'rxjs';
 
 @Component({
   selector: 'app-counter-route',
@@ -12,6 +12,7 @@ export class CounterRouteComponent implements OnInit {
   counter!: number;
   countdown!: number;
   countCompleted = new BehaviorSubject<boolean>(false);
+  countStarted: boolean = false;
 
   constructor(private ar: ActivatedRoute, private snackBar: MatSnackBar) {}
 
@@ -20,12 +21,13 @@ export class CounterRouteComponent implements OnInit {
     this.counter = isNaN(initalValue) ? 10 : initalValue;
     this.countdown = isNaN(initalValue) ? 10 : initalValue;
 
-    this.countCompleted.subscribe(
-      (completed) =>
-        completed &&
-        (this.openSnackBar('La cuenta fue completada'),
-        this.countCompleted.next(false))
-    );
+    this.countCompleted.subscribe((completed) => {
+      if (completed) {
+        this.openSnackBar('La cuenta fue completada');
+        this.countCompleted.next(false);
+        this.countStarted = !this.countStarted;
+      }
+    });
   }
 
   increaseBy(value: number) {
@@ -41,6 +43,7 @@ export class CounterRouteComponent implements OnInit {
   }
 
   startCountdown() {
+    this.countStarted = !this.countStarted;
     timer(0, 1000)
       .pipe(takeWhile(() => this.countdown > 0))
       .subscribe(() => {

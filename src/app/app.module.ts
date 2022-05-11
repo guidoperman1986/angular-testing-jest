@@ -16,6 +16,11 @@ import { StarWarsComponent } from './intermediate/star-wars/star-wars.component'
 import { MaterialModule } from './material/material.module';
 import { TodosModule } from './todos/todos.module';
 import { ClarityModule } from '@clr/angular';
+import { NgContentComponent } from './advanced/ng-content/ng-content.component';
+import { ImageComponent } from './advanced/image/image.component';
+import { CardComponent } from './advanced/card/card.component';
+import { CardListComponent } from './advanced/card-list/card-list.component';
+import { CardWrapperComponent } from './advanced/card-wrapper/card-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { ClarityModule } from '@clr/angular';
     GenderComponent,
     AutocompleteWithApiComponent,
     StarWarsComponent,
+    NgContentComponent,
+    ImageComponent,
+    CardComponent,
+    CardListComponent,
+    CardWrapperComponent,
     /* ClarityComponent */
   ],
   imports: [

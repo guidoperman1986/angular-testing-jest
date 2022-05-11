@@ -8,7 +8,7 @@ interface Link {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'angular-testing';
@@ -16,44 +16,51 @@ export class AppComponent {
   links: Link[] = [
     {
       name: 'Counter',
-      url: 'basic/counter'
+      url: 'basic/counter',
     },
     {
       name: 'Counter with Init Value',
-      url: 'basic/counter/10'
+      url: 'basic/counter/10',
     },
     {
       name: 'Calling REST API',
-      url: 'basic/charizard'
+      url: 'basic/charizard',
     },
     {
       name: 'Father',
-      url: 'basic/father'
+      url: 'basic/father',
     },
     {
       name: 'Search',
-      url: 'intermediate/search'
+      url: 'intermediate/search',
     },
     {
       name: 'Todos',
-      url: 'todos'
+      url: 'todos',
     },
     {
       name: 'ValueAccessor',
-      url: 'controlvalueaccessor'
+      url: 'controlvalueaccessor',
     },
     {
       name: 'Directives',
-      url: 'directive-example'
+      url: 'directive-example',
     },
     {
       name: 'Star Wars',
-      url: 'star-wars'
+      url: 'star-wars',
     },
     {
       name: 'Clarity',
-      url: 'clarity'
+      url: 'clarity',
     },
-
-  ]
+    {
+      name: 'ng-content',
+      url: 'ng-content',
+    },
+    {
+      name: 'content-child',
+      url: 'ng-content/content-child',
+    },
+  ];
 }

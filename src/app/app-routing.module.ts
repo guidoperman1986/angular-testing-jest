@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardListComponent } from './advanced/card-list/card-list.component';
+import { NgContentComponent } from './advanced/ng-content/ng-content.component';
 import { CharizardComponent } from './basic/charizard/charizard.component';
 import { CounterRouteComponent } from './basic/counter-route/counter-route.component';
 import { CounterComponent } from './basic/counter/counter.component';
 import { FatherComponent } from './basic/father/father.component';
+import { ClarityComponent } from './clarity/clarity.component';
 import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
 import { ExampleDirectiveComponent } from './directives/example-directive/example-directive.component';
 import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
@@ -33,28 +36,41 @@ const routes: Routes = [
   },
   {
     path: 'todos',
-    loadChildren: () => import( './todos/todos.module' ).then( m => m.TodosModule )
+    loadChildren: () =>
+      import('./todos/todos.module').then((m) => m.TodosModule),
   },
   {
     path: 'controlvalueaccessor',
-    component: ControlValueAccessorComponent
+    component: ControlValueAccessorComponent,
   },
   {
     path: 'directive-example',
-    component: ExampleDirectiveComponent
+    component: ExampleDirectiveComponent,
   },
   {
     path: 'account-validation',
-    component: AccountValidationComponent
+    component: AccountValidationComponent,
   },
   {
     path: 'star-wars',
-    component: StarWarsComponent
+    component: StarWarsComponent,
+  },
+  {
+    path: 'clarity',
+    component: ClarityComponent,
+  },
+  {
+    path: 'ng-content',
+    component: NgContentComponent,
+  },
+  {
+    path: 'ng-content/content-child',
+    component: CardListComponent,
   },
   {
     path: '**',
     redirectTo: 'basic/counter',
-  }
+  },
 ];
 
 @NgModule({
