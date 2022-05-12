@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { debounceTime, merge, Subject, switchMap, tap } from 'rxjs';
+import { debounceTime, filter, merge, Subject, switchMap, tap } from 'rxjs';
 import { Films, People } from 'src/app/models/star-wars.model';
 import { StarWarsService } from 'src/app/services/star-wars/star-wars.service';
 
@@ -37,34 +37,38 @@ export class StarWarsComponent implements OnInit {
 
   result: Films[] | People[] = [];
 
-  constructor(private starWarsService: StarWarsService) {
-    console.log(this.search.value.length)
-  }
+  constructor(private starWarsService: StarWarsService) {}
 
   ngOnInit(): void {
-    merge(this.search.valueChanges, this.buttonChanged$)    
-        .pipe(
-          debounceTime(1500),
-          tap(()=>{
-            this.isLoading.next(true);
-            this.searched = true;
-          }),
-          switchMap(query => this.starWarsService.search<Films | People>(this.selectedOption, query)),
-          tap(()=>this.isLoading.next(false)),
-        )
-        .subscribe(data=>{
-          next: {
-            if (this.isFilm(data?.results[0])) {
-              this.result = data.results as Films[];
-            } else {
-              this.result = data.results as People[];
-            }
-          }          
-        })
+    merge(this.search.valueChanges, this.buttonChanged$)
+      .pipe(
+        filter((value) => value.length > 0),
+        debounceTime(1500),
+        tap(() => {
+          this.isLoading.next(true);
+          this.searched = true;
+        }),
+        switchMap((query) =>
+          this.starWarsService.search<Films | People>(
+            this.selectedOption,
+            query
+          )
+        ),
+        tap(() => this.isLoading.next(false))
+      )
+      .subscribe((data) => {
+        next: {
+          if (this.isFilm(data?.results[0])) {
+            this.result = data.results as Films[];
+          } else {
+            this.result = data.results as People[];
+          }
+        }
+      });
   }
 
   isFilm(result: Films | People): result is Films {
-    return (result as Films)?.characters !== undefined
+    return (result as Films)?.characters !== undefined;
   }
 
   set onSelectOption(option: string) {

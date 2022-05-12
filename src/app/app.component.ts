@@ -98,5 +98,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       name: 'weather-rxjs',
       url: 'weather',
     },
+    {
+      name: 'Reusable dialog',
+      url: 'dialog',
+    },
   ];
 }

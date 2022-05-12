@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { map, Observable } from 'rxjs';
+import { DialogComponent } from '../intermediate/dialog/dialog.component';
+import { ConfirmDialogData } from '../models/dialog';
 import { Movies, Result } from '../models/movie';
 
 @Injectable({
@@ -8,7 +11,7 @@ import { Movies, Result } from '../models/movie';
 })
 export class UtilityService {
   baseUrl = 'https://api.themoviedb.org/3';
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private dialog: MatDialog) {}
 
   public validateAccount(validateAccount: any): Observable<any> {
     return this.httpClient.post('this.apis.verifyAccount', validateAccount);
@@ -39,5 +42,15 @@ export class UtilityService {
   getWeatherForCity(city: string): Observable<any> {
     const path = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=695ed9f29c4599b7544d0db5c211d499`;
     return this.httpClient.get(path);
+  }
+
+  confirmDialog(data: ConfirmDialogData): Observable<boolean> {
+    return this.dialog
+      .open(DialogComponent, {
+        data,
+        width: '400px',
+        disableClose: true,
+      })
+      .afterClosed();
   }
 }

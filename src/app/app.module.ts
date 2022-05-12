@@ -22,6 +22,8 @@ import { CardComponent } from './advanced/card/card.component';
 import { CardListComponent } from './advanced/card-list/card-list.component';
 import { CardWrapperComponent } from './advanced/card-wrapper/card-wrapper.component';
 import { WeatherComponent } from './intermediate/weather/weather.component';
+import { ReusableDialogComponent } from './intermediate/reusable-dialog/reusable-dialog.component';
+import { DialogComponent } from './intermediate/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { WeatherComponent } from './intermediate/weather/weather.component';
     CardListComponent,
     CardWrapperComponent,
     WeatherComponent,
+    ReusableDialogComponent,
+    DialogComponent,
     /* ClarityComponent */
   ],
   imports: [

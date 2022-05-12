@@ -4,7 +4,7 @@
   align-items: center;
   background-color: black;
 
-  height: 100vh;
+  height: 83vh;
 
   padding: 20px;
 }
@@ -16,28 +16,27 @@
 }
 
 .buttons {
-    margin: 25px auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
+  margin: 25px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .selectedOption {
-    background-color: #ffe300;
+  background-color: #ffe300;
 }
 
 .option {
-    background-color: gray;
-    cursor: pointer;
+  background-color: gray;
+  cursor: pointer;
 }
 
-.search {    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin-top: 40px;
-
+  margin-top: 40px;
 }
 
 ::ng-deep input::placeholder {
@@ -56,7 +55,7 @@
 
 /*change color of label*/
 ::ng-deep .mat-focused .mat-form-field-label {
-  color: #ffe300!important;
+  color: #ffe300 !important;
 }
 
 /* Border */
@@ -65,7 +64,6 @@
   border-color: 15px solid #ffe300 !important;
   background-color: transparent !important;
 }
-
 
 .mat-error {
   color: #ffe300;

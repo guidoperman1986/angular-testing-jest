@@ -10,6 +10,7 @@ import { ClarityComponent } from './clarity/clarity.component';
 import { AccountValidationComponent } from './directives/account-validation/account-validation.component';
 import { ExampleDirectiveComponent } from './directives/example-directive/example-directive.component';
 import { ControlValueAccessorComponent } from './form/control-value-accessor/control-value-accessor.component';
+import { ReusableDialogComponent } from './intermediate/reusable-dialog/reusable-dialog.component';
 import { SearchComponent } from './intermediate/search/search.component';
 import { StarWarsComponent } from './intermediate/star-wars/star-wars.component';
 import { WeatherComponent } from './intermediate/weather/weather.component';
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'weather',
     component: WeatherComponent,
+  },
+  {
+    path: 'dialog',
+    component: ReusableDialogComponent,
   },
   {
     path: '**',
