@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,7 @@ import { CardWrapperComponent } from './advanced/card-wrapper/card-wrapper.compo
 import { WeatherComponent } from './intermediate/weather/weather.component';
 import { ReusableDialogComponent } from './intermediate/reusable-dialog/reusable-dialog.component';
 import { DialogComponent } from './intermediate/dialog/dialog.component';
+import { FormArrayComponent } from './intermediate/form-array/form-array.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DialogComponent } from './intermediate/dialog/dialog.component';
     WeatherComponent,
     ReusableDialogComponent,
     DialogComponent,
+    FormArrayComponent,
     /* ClarityComponent */
   ],
   imports: [
@@ -54,6 +56,7 @@ import { DialogComponent } from './intermediate/dialog/dialog.component';
     TodosModule,
     MaterialModule,
     DirectivesModule,
+    FormsModule,
     /* ClarityModule */
   ],
   providers: [],

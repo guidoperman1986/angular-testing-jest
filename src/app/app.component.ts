@@ -102,5 +102,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       name: 'Reusable dialog',
       url: 'dialog',
     },
+    {
+      name: 'Form Array',
+      url: 'form-array',
+    },
   ];
 }

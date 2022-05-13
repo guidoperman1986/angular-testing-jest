@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Please add below as many hobbies as you want</h2>
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      name="hobby"
+      [formControl]="hobbyInput"
+      autofocus="on"
+    />
+  </mat-form-field>
+  <button mat-icon-button color="primary" (click)="addInputControl()">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+
+  <div *ngFor="let hobby of hobbiesArray.value; last as isLast; index as idx">
+    <div>
+      <mat-form-field>
+        <input
+          #unHobby
+          matInput
+          type="text"
+          name="hobby"
+          [value]="hobby"
+          (keyup.enter)="modifyValue(idx, unHobby.value)"
+        />
+      </mat-form-field>
+      <button mat-icon-button color="warn" (click)="removeInputControl(idx)">
+        <mat-icon>remove_circle</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
