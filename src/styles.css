@@ -25,3 +25,7 @@ body {
   cursor: pointer;
   user-select: none;
 }
+
+.red {
+  background-color: red;
+}

@@ -1,0 +1,14 @@
+<h1>Ng-Template</h1>
+
+<ng-template #reqRes let-reqResResponse="request">
+  <img [src]="reqResResponse.avatar" alt="" srcset="" />
+  <span>{{ reqResResponse.first_name }} {{ reqResResponse.last_name }}</span>
+  <div>{{ reqResResponse | json }}</div>
+</ng-template>
+
+<div *ngIf="reqResResponse">
+  <ng-container
+    *ngTemplateOutlet="reqRes; context: { request: reqResResponse[0] }"
+  >
+  </ng-container>
+</div>

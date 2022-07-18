@@ -25,6 +25,8 @@ import { WeatherComponent } from './intermediate/weather/weather.component';
 import { ReusableDialogComponent } from './intermediate/reusable-dialog/reusable-dialog.component';
 import { DialogComponent } from './intermediate/dialog/dialog.component';
 import { FormArrayComponent } from './intermediate/form-array/form-array.component';
+import { NgTemplateComponent } from './intermediate/ng-template/ng-template.component';
+import { StocksComponent } from './intermediate/stocks/stocks.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { FormArrayComponent } from './intermediate/form-array/form-array.compone
     ReusableDialogComponent,
     DialogComponent,
     FormArrayComponent,
+    NgTemplateComponent,
+    StocksComponent,
     /* ClarityComponent */
   ],
   imports: [

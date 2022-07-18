@@ -1,0 +1,44 @@
+<h1>NgFor | async</h1>
+
+<div>
+  <input type="button" (click)="getMarketHolliday()" value="Market Holliday" />
+</div>
+
+<div *ngFor="let holliday of marketHolliday$ | async">
+  <span [ngSwitch]="holliday.exchange">
+    <p *ngSwitchCase="'NYSE'">
+      <ng-container
+        *ngTemplateOutlet="detail; context: { detail: holliday }"
+      ></ng-container>
+    </p>
+    <p *ngSwitchCase="'NASDAQ'">
+      <ng-container
+        *ngTemplateOutlet="detail; context: { detail: holliday }"
+      ></ng-container>
+    </p>
+    <p *ngSwitchDefault></p>
+  </span>
+</div>
+
+<ng-template #detail let-detail="detail">
+  <span>{{ detail?.date | date }} || </span>
+  <span
+    [ngClass]="{
+      pink: detail.exchange === 'NYSE',
+      green: detail.exchange === 'NASDAQ'
+    }"
+    >{{ detail?.exchange }}
+  </span>
+  <span>|| {{ detail?.name }} || </span>
+  <span>{{ detail?.status }}</span>
+</ng-template>
+
+<br /><br /><br />
+<hr />
+
+<h1>TrackByFn</h1>
+<div *ngFor="let trByFn of trackByFn; trackBy: trackByFnExample">
+  <span>{{ trByFn.name }}</span>
+</div>
+
+<button (click)="changeArray()">Change</button>

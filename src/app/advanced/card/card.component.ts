@@ -1,10 +1,13 @@
 import {
   AfterContentInit,
+  AfterViewInit,
   Component,
   ContentChild,
+  ContentChildren,
   ElementRef,
   Input,
   OnInit,
+  QueryList,
 } from '@angular/core';
 
 @Component({
@@ -12,13 +15,14 @@ import {
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
 })
-export class CardComponent implements OnInit, AfterContentInit {
+export class CardComponent implements OnInit, AfterViewInit, AfterContentInit {
   @Input() message!: string;
 
   @ContentChild('header')
-  cardHeaderData: ElementRef = {
-    nativeElement: undefined,
-  };
+  cardHeaderData!: ElementRef;
+
+  @ContentChildren('header')
+  cardHeaderChildren!: QueryList<ElementRef>;
 
   constructor() {}
 
@@ -28,7 +32,14 @@ export class CardComponent implements OnInit, AfterContentInit {
     alert(this.message);
   }
 
+  ngAfterViewInit(): void {
+    console.log(this.cardHeaderData);
+  }
+
   ngAfterContentInit() {
     this.cardHeaderData.nativeElement.style.color = 'blue';
+
+    console.log('two headers for the card');
+    console.log(this.cardHeaderChildren);
   }
 }

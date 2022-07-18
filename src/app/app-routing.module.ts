@@ -15,6 +15,8 @@ import { ReusableDialogComponent } from './intermediate/reusable-dialog/reusable
 import { SearchComponent } from './intermediate/search/search.component';
 import { StarWarsComponent } from './intermediate/star-wars/star-wars.component';
 import { WeatherComponent } from './intermediate/weather/weather.component';
+import { NgTemplateComponent } from './intermediate/ng-template/ng-template.component';
+import { StocksComponent } from './intermediate/stocks/stocks.component';
 
 const routes: Routes = [
   {
@@ -81,6 +83,14 @@ const routes: Routes = [
   {
     path: 'form-array',
     component: FormArrayComponent,
+  },
+  {
+    path: 'ng-template',
+    component: NgTemplateComponent,
+  },
+  {
+    path: 'stocks',
+    component: StocksComponent,
   },
   {
     path: '**',

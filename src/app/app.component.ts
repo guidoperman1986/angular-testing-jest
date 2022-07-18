@@ -106,5 +106,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       name: 'Form Array',
       url: 'form-array',
     },
+    {
+      name: 'Ng-template',
+      url: 'ng-template',
+    },
+    {
+      name: 'Stocks',
+      url: 'stocks',
+    },
   ];
 }
