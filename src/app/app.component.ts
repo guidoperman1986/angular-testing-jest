@@ -114,5 +114,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       name: 'Stocks',
       url: 'stocks',
     },
+    {
+      name: 'Array Methods',
+      url: 'array'
+    }
   ];
 }

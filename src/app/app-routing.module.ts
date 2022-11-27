@@ -17,6 +17,7 @@ import { StarWarsComponent } from './intermediate/star-wars/star-wars.component'
 import { WeatherComponent } from './intermediate/weather/weather.component';
 import { NgTemplateComponent } from './intermediate/ng-template/ng-template.component';
 import { StocksComponent } from './intermediate/stocks/stocks.component';
+import { ArrayMethodsComponent } from './array-methods/array-methods.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,10 @@ const routes: Routes = [
   {
     path: 'stocks',
     component: StocksComponent,
+  },
+  {
+    path: 'array',
+    component: ArrayMethodsComponent,
   },
   {
     path: '**',

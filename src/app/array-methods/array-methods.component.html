@@ -1,0 +1,75 @@
+<!-- 
+<select>
+    <option value="">Select</option>
+    <option *ngFor="let category of categories">{{category | titlecase}}</option>
+</select>
+
+<select 
+    #detail 
+    name="" 
+    id="" 
+    (change)="getAllProductsByDetail(detail.value, 400)"
+>
+    <option value="">Select</option>
+    <option 
+        [value]="d"
+        *ngFor="let d of optionsDetails"
+    >{{ d | titlecase }}</option>
+</select> -->
+
+<!-- <ng-container [ngTemplateOutlet]="select" [ngTemplateOutletContext]="{ array: categories, type: 'category' }"></ng-container> -->
+<!--  -->
+<!-- <ng-template #select let-array="array" let-type="type"> -->
+    <!-- <select #value (change)="loadData(value.value, type)"> -->
+        <!-- <option value="">Select</option> -->
+        <!-- <option *ngFor="let value of array">{{ value | titlecase }}</option> -->
+    <!-- </select> -->
+<!-- </ng-template> -->
+
+
+{{array | json}}
+<br>
+<h3>Filtered array</h3>
+
+{{getArrayFiltrado()}}
+
+<h3>Insert 1 element at the beginning</h3>
+
+{{insertAtTheBeginning()}}
+
+<h3>Using .at method</h3>
+
+{{ lookForPosition() }}
+
+<h3>Entries</h3>
+
+{{entries | json}}
+
+<div style="display: flex; flex-direction: row; ">
+    <div>
+        <h3>Slice - copy of a section</h3>
+        {{slice}}
+    </div>
+
+    <div style="margin-left: 40px;">
+        <h3>Splice - deletes a part of the array</h3>
+        {{splice}}
+    </div>
+
+
+</div>
+
+<div style="display: flex; flex-direction: row; ">
+    <div>
+        <h3>Reduce</h3>
+        
+        {{reduce}}
+    </div>
+
+    <div style="margin-left: 40px;">
+        <h3>Reduce with initial value</h3>
+        
+        {{reduceWithInitial}}
+    </div>
+    
+</div>

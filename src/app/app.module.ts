@@ -27,6 +27,7 @@ import { DialogComponent } from './intermediate/dialog/dialog.component';
 import { FormArrayComponent } from './intermediate/form-array/form-array.component';
 import { NgTemplateComponent } from './intermediate/ng-template/ng-template.component';
 import { StocksComponent } from './intermediate/stocks/stocks.component';
+import { ArrayMethodsComponent } from './array-methods/array-methods.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { StocksComponent } from './intermediate/stocks/stocks.component';
     FormArrayComponent,
     NgTemplateComponent,
     StocksComponent,
+    ArrayMethodsComponent,
     /* ClarityComponent */
   ],
   imports: [
