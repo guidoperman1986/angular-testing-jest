@@ -7,6 +7,8 @@ import { MyCustomIfDirective } from './my-custom-if.directive';
 import { NgLoopDirective } from './ng-loop.directive';
 import { AccountLookupDirective } from './account-lookup.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HideAfterDirective } from './hideAfter/hide-after.directive';
+import { IfLoadedDirective } from './ifLoaded/if-loaded.directive';
 
 
 
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AtributeDirective,
     MyCustomIfDirective,
     NgLoopDirective,
-    AccountLookupDirective
+    AccountLookupDirective,
+    HideAfterDirective,
+    IfLoadedDirective
   ],
   imports: [
     CommonModule,

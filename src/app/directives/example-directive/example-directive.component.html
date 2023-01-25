@@ -18,3 +18,25 @@
 >
   Hover me and double click me!
 </div>
+
+<hr>
+
+<h1>Structural Directive</h1>
+
+<div *hideAfter="5000 as time; then placeholder; let counter = counter">
+  This content will be hidden in {{ time }} seconds. 
+  It disapears in {{ counter }} seconds.
+</div>
+
+<ng-template #placeholder let-hiddenAfter="hideAfter" let-myDefault>
+  New content created. Previous content was hidden after {{hiddenAfter}} seconds. 
+  Default Value: {{myDefault}}
+</ng-template>
+
+<hr>
+
+<h1>Structural Directive with narrow types (Advanced)</h1>
+
+<section *ifLoaded="state">
+  This section was loaded. The name is {{state.data.name}}
+</section>

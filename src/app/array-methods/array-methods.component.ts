@@ -65,7 +65,7 @@ export class ArrayMethodsComponent implements OnInit {
   }
 
   lookForPosition() {
-    return this.array.at(-1)
+    return this.array.length -1
   }
 
   get entries() {

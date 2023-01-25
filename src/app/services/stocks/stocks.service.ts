@@ -19,7 +19,7 @@ export class StocksService {
     );
   }
 
-  getMarketHolliday(): Observable<Holliday[]> {
+  public getMarketHolliday(): Observable<Holliday[]> {
     return this.http
       .get<Holliday[]>(
         `${this.baseUrl}/v1/marketstatus/upcoming?apiKey=${this.apiKey}`

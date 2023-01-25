@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime, filter, merge, Subject, switchMap, tap } from 'rxjs';
 import { Films, People } from 'src/app/models/star-wars.model';
-import { StarWarsService } from 'src/app/services/star-wars/star-wars.service';
+// import { StarWarsService } from 'src/app/services/star-wars/star-wars.service';
+import { StarWarsService } from '../../services/star-wars/star-wars.service';
 
 @Component({
   selector: 'app-star-wars',
